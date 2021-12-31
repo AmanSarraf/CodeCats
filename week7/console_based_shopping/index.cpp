@@ -5,23 +5,37 @@
 using namespace std;
 
 int login_stat=0;
+void loginon()
+{
+    login_stat=1;
+}
+void loginoff(){
+    login_stat=0;
+}
 
 class customer
 {
     public:
 char name[30],email[100],address[100],username[30],password[20],number[10];
 
+
+};
+
+class product
+{
+
+int sno;
+char pname[100];
+float price,gst,discount;
+public:
 void display()
 {
-  ofstream fout;
-  fout.open("products.txt",ios::out);
-
-
     
-
-   
 }
+
+
 };
+
 
 
 void signup()
@@ -77,6 +91,7 @@ void signin()
       {
         cout<<"Login Successful";
         //login_stat=1;
+        loginon();
 
       }
       else
@@ -91,6 +106,12 @@ void signin()
    
 
 }
+void welcome()
+{
+     cout<<"             welcome"<<endl;
+    cout<<"\n\nenter your choice\n\n\n";
+    cout<<"1.Display Item\n\n2.SignUp\n\n3.SignIn\n\n4.ContactUs\n\n5.Exit";
+}
 
 
 
@@ -100,9 +121,8 @@ void signin()
 int main()
 {  
     int choice;
-    cout<<"             welcome"<<endl;
-    cout<<"\n\nenter your choice\n\n\n";
-    cout<<"1.Display Item\n\n2.SignUp\n\n3.SignIn\n\n4.ContactUs\n\n5.Exit";
+    welcome();
+   
     cin>>choice;
     
     switch(choice)
